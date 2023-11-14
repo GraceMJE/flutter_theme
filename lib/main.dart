@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'sytle/theme.dart';
+
 void main() {
   runApp(
     // theme위치 공간은 Material App 내부에 ~
@@ -9,14 +11,6 @@ void main() {
     ),
   );
 }
-
-final customTheme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-  textTheme: const TextTheme(
-    bodyLarge: TextStyle(fontWeight: FontWeight.normal, fontSize: 30),
-  ),
-  useMaterial3: true,
-);
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
