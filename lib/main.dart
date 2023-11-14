@@ -5,29 +5,18 @@ void main() {
     // theme위치 공간은 Material App 내부에 ~
     MaterialApp(
       home: HomeWidget(),
-      theme: ThemeData(
-        // 기본구현
-        // colorScheme: const ColorScheme.light(
-        //   primary: Colors.indigo,
-        //   secondary: Colors.green,
-        //   tertiary: Colors.yellow,
-
-        // 사용자화면에 어울리는 색상으로
-        //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-
-        // 다크모드 설정
-        //   colorScheme: ColorScheme.dark(),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontWeight: FontWeight.normal, fontSize: 30),
-        ),
-        useMaterial3: true,
-      ),
-      // appBarTheme: AppBarTheme(
-      //   backgroundColor: Colors.red,
+      theme: customTheme
     ),
   );
 }
+
+final customTheme = ThemeData(
+  colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+  textTheme: const TextTheme(
+    bodyLarge: TextStyle(fontWeight: FontWeight.normal, fontSize: 30),
+  ),
+  useMaterial3: true,
+);
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -42,7 +31,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
     // Theme 가져오는 코드
-    final textTheme = Theme.of(context).textTheme;
+    final textTheme = customTheme.textTheme;
 
     return Scaffold(
       appBar: AppBar(
